@@ -20,7 +20,7 @@ export class ConvidadosController {
         }       
     }
 
-    @Patch()
+    @Patch(':id')
     atuaLizarIdade(@Param('id') id: number, @Body('idade') idade: number) {
         console.log(`[ADMINISTRADOR]: Atualizando a idade do ID ${id}`);
         return this.convidadoService.atualizarIdade(+id, idade);
@@ -29,6 +29,7 @@ export class ConvidadosController {
     @Delete(':id')
     @HttpCode(204)
     remover(@Param ('id') id:number){
+        console.log(`[ADMINISTRADOR]: Apagando Usuário de ID ${id}`);
         return this.convidadoService.removerConvidado(+id);
     }
 }
