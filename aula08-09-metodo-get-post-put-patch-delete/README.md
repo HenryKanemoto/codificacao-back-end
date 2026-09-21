@@ -1,118 +1,259 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+<p align="center"> <img src="https://nestjs.com/img/logo-small.svg" width="100" alt="NestJS Logo" /> </p> <h1 align="center">API de Gerenciamento de Convidados</h1> <p align="center"> API REST desenvolvida com NestJS e TypeScript para gerenciamento de convidados. </p> <p align="center"> <img src="https://img.shields.io/badge/Node.js-20.x-339933?style=flat&logo=node.js&logoColor=white" alt="Node.js" /> <img src="https://img.shields.io/badge/NestJS-E0234E?style=flat&logo=nestjs&logoColor=white" alt="NestJS" /> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" alt="TypeScript" /> <img src="https://img.shields.io/badge/Jest-C21325?style=flat&logo=jest&logoColor=white" alt="Jest" /> </p>
+📌 Sobre o projeto
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Esta aplicação consiste em uma API REST para gerenciamento de convidados, desenvolvida utilizando NestJS e TypeScript.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+O projeto foi estruturado seguindo a arquitetura modular do NestJS, separando responsabilidades entre controllers, services e o módulo principal da aplicação.
 
-## Description
+Além dos testes automatizados com Jest, os endpoints foram validados manualmente utilizando Insomnia e Postman.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Objetivos
 
-## Project setup
+Criar uma API REST utilizando NestJS;
 
-```bash
-$ npm install
-```
+Aplicar uma estrutura organizada e modular;
 
-## Compile and run the project
+Implementar operações relacionadas ao gerenciamento de convidados;
 
-```bash
-# development
-$ npm run start
+Testar os componentes da aplicação;
 
-# watch mode
-$ npm run start:dev
+Validar as requisições HTTP e suas respectivas respostas.
 
-# production mode
-$ npm run start:prod
-```
+🧰 Tecnologias utilizadas
+Tecnologia	Utilização
+Node.js	Ambiente de execução
+NestJS	Framework backend
+TypeScript	Linguagem de programação
+Jest	Testes automatizados
+Insomnia	Testes e validação da API
+Postman	Testes e validação da API
+🏗️ Estrutura do projeto
 
-## Run tests
+A aplicação segue uma estrutura baseada nos principais componentes do NestJS:
 
-```bash
-# unit tests
-$ npm run test
+src/
+│
+├── app.controller.spec.ts
+│   └── Testes do controller principal
+│
+├── app.controller.ts
+│   └── Controller principal da aplicação
+│
+├── app.module.ts
+│   └── Módulo raiz da aplicação
+│
+├── app.service.ts
+│   └── Serviço principal da aplicação
+│
+├── convidados.controller.ts
+│   └── Endpoints relacionados aos convidados
+│
+├── convidados.service.ts
+│   └── Regras e operações relacionadas aos convidados
+│
+└── main.ts
+    └── Inicialização da aplicação
 
-# e2e tests
-$ npm run test:e2e
+Organização das responsabilidades
 
-# test coverage
-$ npm run test:cov
-```
+Controller
 
-## Deployment
+Responsável por receber as requisições HTTP e direcioná-las para os serviços correspondentes.
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+Service
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+Responsável pela lógica da aplicação e pelas operações relacionadas aos convidados.
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+Module
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+Responsável por organizar e conectar os componentes da aplicação.
 
-## Observability
+Main
 
-In production applications, observability is essential for understanding how your system behaves, detecting issues early, and maintaining reliable performance.
+É o ponto de entrada da aplicação, responsável por inicializar o servidor NestJS.
 
-[NestJS Observe](https://observe.nestjs.com) automatically instruments your NestJS application, giving you deep visibility into your system with minimal setup:
+⚙️ Pré-requisitos
 
-- **Distributed tracing:** Follow requests across services and understand how they flow through your system.
-- **Waterfall analysis:** Visualize request execution and identify slow operations, bottlenecks, and unexpected delays.
-- **Performance analysis:** Analyze application performance in real time and quickly pinpoint areas that need optimization.
-- **Metrics:** Track key application and infrastructure metrics to understand system health and performance trends.
-- **Logging:** Centralize and correlate logs with traces and other telemetry to make debugging easier.
-- **Error tracking:** Detect errors quickly and investigate their root causes with the surrounding context.
-- **SLA monitoring:** Track service-level objectives and identify when your application is approaching or exceeding defined thresholds.
-- **Alarms and alerts:** Set up alerts for critical errors, performance degradation, SLA violations, and other anomalies so your team can react quickly.
+Antes de executar o projeto, certifique-se de possuir instalado:
 
-This project is already instrumented. Create a free account at [observe.nestjs.com](https://observe.nestjs.com), add an application, and paste the generated app key and secret into the `ObserveModule.forRoot()` call in `src/app.module.ts`.
+Node.js
 
-The free plan needs no payment details and covers 300,000 events a month. You can also browse the [live demo](https://www.observe-demo.nestjs.com/dashboard) first - the whole dashboard over a busy service's data, with nothing to install.
+npm
 
-## Resources
+Para verificar as versões instaladas:
 
-Check out a few resources that may come in handy when working with NestJS:
+node --version
+npm --version
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Auto-instrument your application with [NestJS Observe](https://observe.nestjs.com). Distributed tracing, metrics, and logging made easy. Error tracking and performance monitoring for your NestJS applications.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+🚀 Instalação
+1. Clone o repositório
+git clone <URL_DO_SEU_REPOSITORIO>
 
-## Support
+2. Entre no diretório do projeto
+cd <NOME_DO_PROJETO>
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+3. Instale as dependências
+npm install
 
-## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Após a instalação, o projeto estará pronto para ser executado.
 
-## License
+▶️ Executando a aplicação
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+O NestJS disponibiliza diferentes formas de execução da aplicação.
+
+Desenvolvimento
+
+Utilize o modo watch durante o desenvolvimento:
+
+npm run start:dev
+
+
+Esse modo reinicia automaticamente a aplicação sempre que alterações forem detectadas nos arquivos do projeto.
+
+Execução normal
+npm run start
+
+Produção
+npm run start:prod
+
+
+Após iniciar a aplicação, a API estará disponível, por padrão, em:
+
+http://localhost:3000
+
+
+A porta utilizada pode ser alterada de acordo com a configuração presente no arquivo main.ts.
+
+🔌 API
+
+A principal funcionalidade da aplicação está relacionada ao gerenciamento de convidados.
+
+Os endpoints são implementados no arquivo:
+
+src/convidados.controller.ts
+
+Operações disponíveis
+
+A estrutura da API contempla operações HTTP relacionadas aos convidados:
+
+Método	Endpoint	Descrição
+GET	/convidados	Lista os convidados
+GET	/convidados/:id	Busca um convidado específico
+POST	/convidados	Cadastra um novo convidado
+PUT	/convidados/:id	Atualiza um convidado
+DELETE	/convidados/:id	Remove um convidado
+
+Os endpoints acima devem ser ajustados caso a implementação atual do projeto utilize rotas diferentes.
+
+🧪 Testes
+
+O projeto utiliza Jest para a execução dos testes automatizados.
+
+Testes unitários
+
+Para executar os testes:
+
+npm run test
+
+Testes em modo de observação
+
+Durante o desenvolvimento, é possível utilizar:
+
+npm run test:watch
+
+Cobertura de testes
+
+Para gerar o relatório de cobertura:
+
+npm run test:cov
+
+🔎 Validação dos endpoints
+
+Além dos testes automatizados, a API foi validada manualmente utilizando ferramentas de teste de APIs.
+
+Insomnia
+
+O Insomnia foi utilizado durante o desenvolvimento para realizar requisições HTTP e verificar o comportamento dos endpoints.
+
+Foram realizadas validações relacionadas a:
+
+Métodos HTTP;
+
+URLs dos endpoints;
+
+Dados enviados nas requisições;
+
+Códigos de status HTTP;
+
+Corpo das respostas;
+
+Comportamento das operações de convidados.
+
+Postman
+
+O Postman também foi utilizado para testar os endpoints e validar as respostas da API.
+
+Os testes permitiram verificar o fluxo das requisições e confirmar o retorno dos dados esperados.
+
+📋 Fluxo básico de utilização
+
+O funcionamento da API segue o fluxo:
+
+Cliente HTTP
+     │
+     ▼
+Controller
+     │
+     ▼
+Service
+     │
+     ▼
+Regra de negócio
+     │
+     ▼
+Resposta HTTP
+
+
+Ferramentas como Insomnia e Postman atuam como clientes HTTP para enviar requisições à API e analisar as respostas retornadas.
+
+📁 Arquivos principais
+Arquivo	Responsabilidade
+main.ts	Inicialização da aplicação
+app.module.ts	Configuração do módulo principal
+app.controller.ts	Controller principal
+app.service.ts	Serviço principal
+convidados.controller.ts	Rotas de convidados
+convidados.service.ts	Lógica relacionada aos convidados
+app.controller.spec.ts	Testes do controller
+📦 Scripts disponíveis
+
+Os principais scripts utilizados no projeto são:
+
+# Iniciar a aplicação
+npm run start
+
+# Iniciar em modo de desenvolvimento
+npm run start:dev
+
+# Iniciar em produção
+npm run start:prod
+
+# Executar testes
+npm run test
+
+# Executar testes em modo watch
+npm run test:watch
+
+# Gerar cobertura de testes
+npm run test:cov
+
+📄 Licença
+
+Este projeto está disponível sob a licença MIT.
+
+Consulte o arquivo LICENSE para obter os detalhes da licença.
+
+👨‍💻 Desenvolvimento
+
+Projeto desenvolvido como uma aplicação backend utilizando NestJS, com foco no desenvolvimento de uma API REST para gerenciamento de convidados.
