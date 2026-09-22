@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { createObserveModule } from '@nestjs/observe';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
+import { LivrosController } from './livros.controller.js';
+import { LivrosService } from './livros.service.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -15,7 +17,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       serviceId: 'aula10-rotas-dinamicas',
     }),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [LivrosController, AppController],
+  providers: [LivrosService, AppService],
 })
 export class AppModule {}
