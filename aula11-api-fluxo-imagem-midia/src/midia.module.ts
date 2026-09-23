@@ -1,4 +1,10 @@
 import { Module } from '@nestjs/common';
+import { MidiaController } from './midia.controller.js';
 
-@Module({});
-export class MidiaModule {}
+@Module({
+  imports: [],
+  controllers: [MidiaController],
+})
+export class MidiaModule {
+    
+}
